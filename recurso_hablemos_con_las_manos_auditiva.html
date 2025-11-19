@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recurso Adaptado - Hablemos con las manos: Mi cuerpo, mis decisiones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f3f6fb;
+      color: #222;
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(135deg, #2563eb, #22c55e);
+      color: white;
+      padding: 1.5rem 1rem;
+    }
+    header .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0 0 0.25rem;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin: 0.2rem 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 1.5rem auto 2rem;
+      padding: 0 1rem 2rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      margin-bottom: 0.6rem;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.2rem 1.2rem 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .card h3 {
+      margin-top: 0.75rem;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      margin: 0.15rem 0.25rem 0.15rem 0;
+    }
+    .list-clean {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.4rem 0;
+    }
+    .list-clean li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      margin-bottom: 0.3rem;
+    }
+    .list-clean li span.icon {
+      margin-top: 0.15rem;
+    }
+    .tagline {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    .highlight-box {
+      background: #fefce8;
+      border-radius: 0.9rem;
+      border: 1px solid #facc15;
+      padding: 0.7rem 0.9rem;
+      font-size: 0.9rem;
+      margin-top: 0.6rem;
+    }
+    .step-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.3rem 0;
+    }
+    .step-list li {
+      margin-bottom: 0.35rem;
+      padding-left: 1.4rem;
+      position: relative;
+      font-size: 0.95rem;
+    }
+    .step-list li::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #2563eb;
+      color: white;
+      font-weight: 600;
+    }
+    .sem-container {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.6rem;
+    }
+    .sem-card {
+      flex: 1 1 130px;
+      border-radius: 0.8rem;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      text-align: center;
+      font-weight: 500;
+    }
+    .sem-green {
+      background: #dcfce7;
+      border: 1px solid #4ade80;
+    }
+    .sem-yellow {
+      background: #fef9c3;
+      border: 1px solid #facc15;
+    }
+    .sem-red {
+      background: #fee2e2;
+      border: 1px solid #fca5a5;
+    }
+    .footer-note {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.6rem;
+    }
+    .figure-box {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .figure-box svg {
+      max-width: 260px;
+      width: 100%;
+    }
+    /* Botón y contenedor para videos en LSC */
+    .btn-lsc {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #2563eb;
+      background: #eff6ff;
+      font-size: 0.85rem;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
+    .btn-lsc:hover {
+      background: #dbeafe;
+    }
+    .video-lsc {
+      border-radius: 0.75rem;
+      border: 1px dashed #94a3b8;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.7rem;
+      background: #f8fafc;
+    }
+    .video-lsc p {
+      margin: 0;
+      font-style: italic;
+      opacity: 0.85;
+    }
+    @media (min-width: 720px) {
+      header {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      main {
+        padding: 0 1.5rem 2.5rem;
+      }
+      .card {
+        padding: 1.35rem 1.6rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <div class="badge">Recurso adaptado · Educación Sexual Integral (ESI)</div>
+      <h1>Hablemos con las manos: Mi cuerpo, mis decisiones</h1>
+      <p class="tagline">
+        Guía visual y accesible para personas con discapacidad auditiva usuarias de Lengua de Señas Colombiana (LSC)
+        sobre el cuerpo, las emociones, el consentimiento y los límites personales.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>🎯 Objetivo del recurso</h2>
+      <button class="btn-lsc">📹 Ver este contenido en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC que explica el objetivo del recurso.</p>
+      </div>
+      <p>
+        Facilitar la comprensión del derecho a recibir información clara y accesible sobre el cuerpo,
+        la higiene, el consentimiento y los límites personales, utilizando recursos visuales, ejemplos sencillos
+        y materiales que puedan explicarse en Lengua de Señas Colombiana (LSC).
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>🧍 1. ¿Qué es mi cuerpo?</h2>
+      <button class="btn-lsc">📹 Ver este contenido en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC sobre las partes del cuerpo y su importancia.</p>
+      </div>
+      <p><strong>Mi cuerpo es mío. Solo yo decido sobre él.</strong></p>
+      <ul class="list-clean">
+        <li><span class="icon">🧠</span><span><strong>Cabeza:</strong> aquí pienso, siento y tomo decisiones.</span></li>
+        <li><span class="icon">👀</span><span><strong>Ojos:</strong> veo el mundo, las personas, los gestos y las señas.</span></li>
+        <li>
+          <span class="icon">👂</span>
+          <span>
+            <strong>Oídos:</strong> son parte de mi cuerpo. Algunas personas escuchan con ellos y otras no escuchan
+            o escuchan de forma diferente, y eso también está bien.
+          </span>
+        </li>
+        <li><span class="icon">🤲</span><span><strong>Manos:</strong> con ellas señalo, saludo, juego y también hago señas para comunicarme.</span></li>
+        <li><span class="icon">❤️</span><span><strong>Pecho:</strong> aquí siento emociones como alegría, tristeza, miedo o calma.</span></li>
+        <li>
+          <span class="icon">🩲</span>
+          <span>
+            <strong>Partes íntimas:</strong> son privadas. Nadie debe mirarlas ni tocarlas sin mi permiso.
+          </span>
+        </li>
+      </ul>
+
+      <div class="figure-box">
+        <!-- Figura humana tipo pictograma con zona íntima marcada -->
+        <svg viewBox="0 0 200 400" aria-label="Figura humana con partes íntimas marcadas">
+          <!-- Cabeza -->
+          <circle cx="100" cy="55" r="40" fill="#fde68a" stroke="#92400e" stroke-width="3"/>
+          <!-- Cuello -->
+          <rect x="88" y="90" width="24" height="18" fill="#fde68a" stroke="#92400e" stroke-width="3"/>
+          <!-- Tronco -->
+          <rect x="65" y="108" width="70" height="120" rx="20" ry="20" fill="#bfdbfe" stroke="#1e40af" stroke-width="3"/>
+          <!-- Brazos -->
+          <path d="M60 120 Q40 160 50 200" fill="none" stroke="#1e40af" stroke-width="12" stroke-linecap="round"/>
+          <path d="M140 120 Q160 160 150 200" fill="none" stroke="#1e40af" stroke-width="12" stroke-linecap="round"/>
+          <!-- Piernas -->
+          <path d="M85 228 L80 340" stroke="#1e40af" stroke-width="13" stroke-linecap="round"/>
+          <path d="M115 228 L120 340" stroke="#1e40af" stroke-width="13" stroke-linecap="round"/>
+          <!-- Zona íntima resaltada -->
+          <ellipse cx="100" cy="205" rx="22" ry="26" fill="#fecaca" stroke="#dc2626" stroke-width="3"/>
+          <text x="100" y="211" text-anchor="middle" font-size="22" fill="#dc2626">🚫</text>
+        </svg>
+        <p><strong>La imagen muestra una silueta humana y resalta la zona íntima para recordar que es privada.</strong></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🔒 2. Mis partes íntimas</h2>
+      <button class="btn-lsc">📹 Ver este contenido en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC sobre las partes íntimas y el cuidado del cuerpo.</p>
+      </div>
+      <p>Las partes íntimas de mi cuerpo son:</p>
+      <ul class="list-clean">
+        <li><span class="icon">👙</span><span>Pechos (en mujeres).</span></li>
+        <li><span class="icon">👖</span><span>Pene.</span></li>
+        <li><span class="icon">🩲</span><span>Vulva.</span></li>
+        <li><span class="icon">🍑</span><span>Nalgas.</span></li>
+      </ul>
+      <p><strong>Regla clara:</strong></p>
+      <ul class="list-clean">
+        <li><span class="icon">🛑</span><span><strong>Nadie puede mirar ni tocar mis partes íntimas sin mi permiso.</strong></span></li>
+      </ul>
+      <p><strong>Solo en estas situaciones es permitido:</strong></p>
+      <ul class="list-clean">
+        <li><span class="icon">👩‍⚕️</span><span><strong>Médico:</strong> cuando revisa mi salud, explica con calma (y, si es posible, con intérprete de LSC) lo que va a hacer.</span></li>
+        <li><span class="icon">🧑‍🦽</span><span><strong>Cuidador/a:</strong> si me ayuda a bañarme o asearme, respetando siempre mi cuerpo.</span></li>
+      </ul>
+      <div class="highlight-box">
+        Siempre deben explicarme antes lo que van a hacer, pedir mi consentimiento y hacerme sentir seguro/a.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>✅ 3. ¿Qué es el consentimiento?</h2>
+      <button class="btn-lsc">📹 Ver este contenido en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC que explica el consentimiento con ejemplos visuales.</p>
+      </div>
+      <p><strong>El consentimiento es decir SÍ o NO con libertad.</strong></p>
+      <p>Doy consentimiento cuando:</p>
+      <ul class="list-clean">
+        <li><span class="icon">✔️</span><span>Entiendo lo que va a pasar.</span></li>
+        <li><span class="icon">😌</span><span>Estoy tranquilo/a.</span></li>
+        <li><span class="icon">🙂</span><span>Quiero hacerlo de verdad, sin presión.</span></li>
+      </ul>
+      <p><strong>No es consentimiento cuando:</strong></p>
+      <ul class="list-clean">
+        <li><span class="icon">😰</span><span>Tengo miedo.</span></li>
+        <li><span class="icon">💢</span><span>Me obligan o me presionan.</span></li>
+        <li><span class="icon">🤯</span><span>No entiendo lo que está pasando.</span></li>
+        <li><span class="icon">🤔</span><span>Me confunden o no me explican con claridad.</span></li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Recuerda:</strong> si no digo <strong>SÍ</strong> de forma clara y tranquila, entonces es <strong>NO</strong>.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>💬 4. Mis emociones y lo que puedo hacer</h2>
+      <button class="btn-lsc">📹 Ver este contenido en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC sobre las emociones y cómo expresarlas.</p>
+      </div>
+      <p><strong>Todas mis emociones son importantes.</strong></p>
+      <div class="sem-container">
+        <div class="sem-card sem-green">😊 Alegría</div>
+        <div class="sem-card sem-yellow">😟 Tristeza</div>
+        <div class="sem-card sem-yellow">😰 Miedo</div>
+        <div class="sem-card sem-red">😡 Enojo</div>
+      </div>
+      <h3>Si algo me incomoda, puedo:</h3>
+      <ul class="list-clean">
+        <li><span class="icon">✋</span><span>Hacer señas para decir: <strong>“NO”</strong>, <strong>“NO me gusta”</strong> o <strong>“Eso me hace sentir mal”</strong>.</span></li>
+        <li><span class="icon">🚶</span><span>Alejarme de la persona o del lugar.</span></li>
+        <li><span class="icon">🧑‍🏫</span><span>Buscar a un adulto de confianza (familiar, cuidador, docente, intérprete).</span></li>
+        <li><span class="icon">📣</span><span>Contar con señas lo que pasó y pedir ayuda.</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🛡️ 5. Reglas para cuidarme</h2>
+      <button class="btn-lsc">📹 Ver este contenido en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC sobre reglas de autocuidado y protección.</p>
+      </div>
+      <h3>Regla 1: Tengo derecho a estar seguro/a</h3>
+      <p>Nadie puede obligarme a hacer cosas que no quiero o que me hacen sentir mal, aunque sea una persona conocida.</p>
+
+      <h3>Regla 2: Tengo derecho a recibir información clara</h3>
+      <p>
+        Puedo pedir que me expliquen con señas, dibujos, imágenes o videos. Tengo derecho a entender bien lo que me dicen.
+      </p>
+
+      <h3>Regla 3: Puedo pedir ayuda</h3>
+      <p>
+        Si algo me asusta o me incomoda, puedo hablar con alguien de confianza. No es mi culpa si otra persona se comporta mal.
+      </p>
+
+      <div class="highlight-box">
+        <strong>Recuerda:</strong> expresar lo que siento y lo que me pasa es una forma de cuidarme.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🚨 6. ¿Qué hago si alguien cruza mis límites?</h2>
+      <button class="btn-lsc">📹 Ver este contenido en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC con pasos claros sobre qué hacer si alguien cruza los límites.</p>
+      </div>
+      <ul class="step-list">
+        <li data-step="1">Hago la seña de <strong>“NO”</strong> o muestro con mi cara y manos que no quiero.</li>
+        <li data-step="2">Me alejo de la persona o salgo del lugar.</li>
+        <li data-step="3">Busco a alguien seguro: mamá, papá, familiar, cuidador, docente, intérprete u otro adulto de confianza.</li>
+        <li data-step="4">Cuento con señas lo que pasó, aunque me dé pena o miedo.</li>
+        <li data-step="5">Pido ayuda hasta que alguien me escuche, me crea y me proteja.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🚦 7. Actividad: El semáforo del consentimiento</h2>
+      <button class="btn-lsc">📹 Ver esta actividad en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC que explica la actividad del semáforo del consentimiento.</p>
+      </div>
+      <p>Para esta actividad necesitamos tres tarjetas de colores:</p>
+      <div class="sem-container">
+        <div class="sem-card sem-green">🟢 Verde<br /><small>Me gusta · Quiero · Estoy cómodo/a</small></div>
+        <div class="sem-card sem-yellow">🟡 Amarillo<br /><small>No entiendo bien · Necesito más información</small></div>
+        <div class="sem-card sem-red">🔴 Rojo<br /><small>No quiero · Me siento mal</small></div>
+      </div>
+
+      <h3>¿Cómo se juega?</h3>
+      <ol class="step-list" style="margin-top: 0.6rem;">
+        <li data-step="1">La persona facilitadora muestra la situación en una imagen o la explica en LSC.</li>
+        <li data-step="2">Cada participante piensa cómo se sentiría en esa situación.</li>
+        <li data-step="3">Levanta la tarjeta del color que representa lo que siente.</li>
+      </ol>
+
+      <h3>Ejemplos de situaciones</h3>
+      <ul class="list-clean">
+        <li><span class="icon">👥</span><span>“Un amigo quiere darte un abrazo y tú te sientes bien con eso”.</span></li>
+        <li><span class="icon">❌</span><span>“Alguien que no conoces quiere ver tu cuerpo debajo de la ropa”.</span></li>
+        <li><span class="icon">👩‍⚕️</span><span>“El médico te revisa, te explica en señas o con intérprete lo que hará y estás acompañado/a”.</span></li>
+      </ul>
+
+      <div class="highlight-box">
+        No hay respuestas “buenas” o “malas”. Lo importante es reconocer cómo me siento y aprender a expresarlo.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>💻 8. Material adicional sugerido</h2>
+      <button class="btn-lsc">📹 Ver explicación de materiales adicionales en LSC</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC que explica los materiales adicionales sugeridos.</p>
+      </div>
+      <p>Este recurso puede complementarse con:</p>
+      <div>
+        <span class="pill">📊 Presentación con pictogramas</span>
+        <span class="pill">🧾 Guía breve para familias y cuidadores</span>
+        <span class="pill">📚 Historieta visual: “Aprendo a decir NO”</span>
+        <span class="pill">🎬 Videos cortos en LSC con subtítulos</span>
+        <span class="pill">🎲 Juegos visuales de repaso</span>
+      </div>
+      <p class="footer-note">
+        Estos materiales deben mantener siempre el apoyo visual, el uso de LSC y el respeto por la autonomía de las
+        personas con discapacidad auditiva.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>📌 9. ¿Por qué este recurso es adaptado?</h2>
+      <button class="btn-lsc">📹 Ver explicación en Lengua de Señas Colombiana (LSC)</button>
+      <div class="video-lsc">
+        <p>Espacio para insertar el video en LSC sobre la adaptación del recurso para personas sordas.</p>
+      </div>
+      <p>Este recurso está pensado especialmente para personas con discapacidad auditiva porque:</p>
+      <ul class="list-clean">
+        <li><span class="icon">✋</span><span>Reconoce a la Lengua de Señas Colombiana (LSC) como lengua principal de muchas personas sordas.</span></li>
+        <li><span class="icon">🎨</span><span>Incluye símbolos, emojis y elementos visuales que ayudan a comprender mejor las ideas.</span></li>
+        <li><span class="icon">🎬</span><span>Reserva espacios para videos en LSC en cada sección.</span></li>
+        <li><span class="icon">♻️</span><span>Permite repetir y revisar la información las veces que sea necesario.</span></li>
+        <li><span class="icon">🤝</span><span>Invita a la participación de familias, docentes e intérpretes como apoyo.</span></li>
+        <li><span class="icon">⚖️</span><span>Se basa en el respeto, la autonomía y los derechos sexuales y reproductivos.</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>📎 Nota para docentes, familias e intérpretes</h2>
+      <p style="font-size: 0.95rem;">
+        Este recurso puede proyectarse en el aula o utilizarse de manera individual en computador, tableta o celular.
+        También puede imprimirse en hojas tamaño carta, ampliando los textos e íconos para mayor legibilidad. Es ideal
+        complementarlo con la interpretación constante en LSC y con momentos de diálogo visual con los y las
+        participantes.
+      </p>
+      <p class="footer-note">
+        Desarrollado como recurso adaptado dentro de una estrategia pedagógica de Educación Sexual Integral (ESI) para
+        personas con discapacidad auditiva.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>✍️ Autoría del recurso</h2>
+      <p style="font-size: 0.95rem;">
+        <strong>Recurso elaborado por: Manuela y Ana Maria</strong>
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>
